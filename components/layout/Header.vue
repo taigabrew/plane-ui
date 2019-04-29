@@ -10,14 +10,14 @@
         </svg>
       </button>
       <nuxt-link
-        class="font-bold text-blue-500 inline-flex items-center leading-wide"
+        class="font-bold text-2xl md:text-lg text-blue-500 inline-flex items-center leading-wide whitespace-no-wrap"
         to="/"
       >
         Dash Demo
       </nuxt-link>
     </div>
     <Search />
-    <div class="inline-flex items-center pr-8">
+    <div class="hidden md:inline-flex items-center pr-8">
       <FastActions />
       <UserArea />
     </div>

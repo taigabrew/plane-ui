@@ -29,6 +29,18 @@ export default {
           url: '/'
         },
         {
+          id: 'editors',
+          icon: 'pencil',
+          name: 'Редакторы',
+          url: 'inputs'
+        },
+        {
+          id: 'lists',
+          icon: 'align-justify',
+          name: 'Списки',
+          url: 'lists'
+        },
+        {
           id: 'settings',
           icon: 'cogs',
           name: 'Настройки',

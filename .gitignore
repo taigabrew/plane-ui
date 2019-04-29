@@ -84,5 +84,6 @@ dist
 sw.*
 
 
-# Design files
+# Project files
 design
+TODO.md

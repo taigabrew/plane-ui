@@ -1,6 +1,6 @@
 <template>
   <header class="flex justify-between">
-    <div class="flex items-center">
+    <div class="flex items-center w-1/6 pl-8">
       <button class="mr-2 md:hidden" @click="toggleSideNav">
         <svg class="w-10 h-10 fill-current text-black">
           <use
@@ -16,17 +16,22 @@
         Dash Demo
       </nuxt-link>
     </div>
-    <div class="inline-flex items-center">
-      <span>быстрые действия</span>
-      <span class="w-10 h-10 rounded-full bg-gray-300 ml-4" />
+    <Search />
+    <div class="inline-flex items-center pr-8">
+      <FastActions />
+      <UserArea />
     </div>
   </header>
 </template>
 
 <script>
 import { mutations } from '~/store/'
+import Search from './Search'
+import FastActions from './FastActions'
+import UserArea from './UserArea'
 
 export default {
+  components: { Search, FastActions, UserArea },
   methods: {
     toggleSideNav() {
       mutations.toggleSideNav()

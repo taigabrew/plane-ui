@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'Gilam';
+  font-display: swap;
+  font-weight: 700;
+  src: url('./Gilam-Bold.eot');
+  src: url('./Gilam-Bold.eot?#iefix') format('embedded-opentype'),
+    url('./Gilam-Bold.woff2') format('woff2'),
+    url('./Gilam-Bold.woff') format('woff'),
+    url('./Gilam-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gilam-Light';
+  font-display: swap;
+  font-weight: 300;
+  src: url('./Gilam-Light.eot');
+  src: url('./Gilam-Light.eot?#iefix') format('embedded-opentype'),
+    url('./Gilam-Light.woff2') format('woff2'),
+    url('./Gilam-Light.woff') format('woff'),
+    url('./Gilam-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gilam';
+  font-display: swap;
+  font-weight: 400;
+  src: url('./Gilam-Regular.eot');
+  src: url('./Gilam-Regular.eot?#iefix') format('embedded-opentype'),
+    url('./Gilam-Regular.woff2') format('woff2'),
+    url('./Gilam-Regular.woff') format('woff'),
+    url('./Gilam-Regular.ttf') format('truetype');
+}

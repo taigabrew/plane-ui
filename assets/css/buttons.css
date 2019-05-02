@@ -1,0 +1,20 @@
+.btn {
+  @apply rounded py-2 px-5 transition;
+}
+
+.btn--action {
+  @apply bg-blue-500 text-white;
+
+  &:hover,
+  &:focus {
+    @apply bg-blue-600;
+  }
+
+  &:active {
+    @apply shadow-inner bg-blue-500;
+  }
+}
+
+.btn--empty {
+  @apply text-gray-500;
+}

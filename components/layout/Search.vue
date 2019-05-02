@@ -10,7 +10,7 @@
     </svg>
     <input
       type="text"
-      class="h-10 w-full bg-gray-200 focus:bg-white rounded border border-transparent pl-12 focus:border-gray-300 search-input transition"
+      class="c-input pl-12"
       placeholder="Поиск (Нажмите '/' чтобы фокусировки)"
     />
   </div>

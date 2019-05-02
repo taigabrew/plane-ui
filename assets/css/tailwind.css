@@ -2,3 +2,5 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import './custom-utils.css';
+@import './buttons.css';
+@import './editors.css';

@@ -7,5 +7,5 @@
 }
 
 .transition {
-  transition: 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }

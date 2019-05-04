@@ -19,7 +19,7 @@ module.exports = {
     }
   },
   variants: {
-    // Some useful comment
+    textColor: ['hover', 'focus', 'active']
   },
   plugins: [
     // Some useful comment

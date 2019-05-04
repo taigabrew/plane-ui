@@ -24,10 +24,11 @@
       <button
         v-if="type === 'password'"
         name="showPassword"
-        class="absolute py-2 px-3 bottom-0 right-0"
+        class="absolute py-2 px-3 bottom-0 right-0 transition text-blue-500 hover:text-blue-600 active:text-blue-500"
+        :class="value ? 'opacity-100' : 'opacity-0'"
         @click="toggleVisiblePassword"
       >
-        <svg class="w-6 h-6 fill-current text-blue-500">
+        <svg class="w-6 h-6 fill-current">
           <use
             xmlns:xlink="http://www.w3.org/1999/xlink"
             :xlink:href="

@@ -1,3 +1,7 @@
+.c-input-wrap + .c-input-wrap {
+  @apply mt-8;
+}
+
 .c-input {
   @apply h-10 w-full bg-gray-200 rounded border border-transparent transition text-gray-700;
 

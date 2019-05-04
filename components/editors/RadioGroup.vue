@@ -1,17 +1,52 @@
 <template>
-  <div>
-    <input
-      type="radio"
-      value="One"
-      :checked="picked == 'One'"
-      @change="e => (picked = e.target.value)"
-    />
-    <input
-      type="radio"
-      value="Two"
-      :checked="picked == 'Two'"
-      @change="e => (picked = e.target.value)"
-    />
-    <span>Picked: {{ picked }}</span>
-  </div>
+  <fieldset>
+    <legend>
+      <span>{{ label }}</span>
+      <span>{{ hint }}</span>
+    </legend>
+    <div v-for="(item, key) in items" :key="key">
+      <input
+        type="radio"
+        :value="key"
+        :id="`radio${key}`"
+        :name="`radio${id}`"
+        :checked="modelValue === key"
+        @change="$emit('change', key)"
+      />
+      <label :for="`radio${key}`">{{ item.label }}</label>
+    </div>
+  </fieldset>
 </template>
+
+<script>
+export default {
+  model: {
+    prop: 'modelValue',
+    event: 'change'
+  },
+  props: {
+    id: {
+      type: String,
+      required: true
+    },
+    label: {
+      type: String,
+      required: true
+    },
+    hint: {
+      type: String,
+      default: ''
+    },
+    items: {
+      type: Object,
+      default() {
+        return {}
+      }
+    },
+    modelValue: {
+      type: String,
+      default: ''
+    }
+  }
+}
+</script>

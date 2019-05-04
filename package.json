@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "cross-env NODE_ENV=production node server.js",
+    "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
@@ -16,12 +16,8 @@
   "dependencies": {
     "@nuxtjs/pwa": "^2.6.0",
     "animejs": "^3.0.1",
-    "body-parser": "^1.18.3",
-    "express": "^4.16.4",
-    "express-session": "^1.16.1",
     "nuxt": "^2.4.0",
-    "nuxt-compress": "^1.0.2",
-    "whatwg-fetch": "^3.0.0"
+    "nuxt-compress": "^1.0.2"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",

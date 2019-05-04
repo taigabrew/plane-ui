@@ -16,8 +16,8 @@
     <CollapseTransition>
       <div
         v-if="isOpened"
-        class="absolute right-0 top-full bg-white rounded shadow-lg py-2 text-sm text-gray-700 flex-col flex transition user-area-dropdown"
         ref="userActionsDropdown"
+        class="absolute right-0 top-full bg-white rounded shadow-lg py-2 text-sm text-gray-700 flex-col flex transition user-area-dropdown"
       >
         <button
           v-for="(status, statusName) in statuses"

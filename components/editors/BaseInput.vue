@@ -5,7 +5,7 @@
       class="block text-gray-700 font-semibold leading-tight mb-1"
       >{{ label }}</label
     >
-    <p :id="`${id}hint`" class="text-sm text-gray-500 mb-3 -mt-1" v-if="hint">
+    <p v-if="hint" :id="`${id}hint`" class="text-sm text-gray-500 mb-3 -mt-1">
       {{ hint }}
     </p>
     <div class="relative max-w-sm">
@@ -24,8 +24,8 @@
       <button
         v-if="type === 'password'"
         name="showPassword"
-        @click="toggleVisiblePassword"
         class="absolute py-2 px-3 bottom-0 right-0"
+        @click="toggleVisiblePassword"
       >
         <svg class="w-6 h-6 fill-current text-blue-500">
           <use

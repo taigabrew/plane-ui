@@ -6,9 +6,9 @@
     </legend>
     <div v-for="(item, key) in items" :key="key">
       <input
+        :id="`radio${key}`"
         type="radio"
         :value="key"
-        :id="`radio${key}`"
         :name="`radio${id}`"
         :checked="modelValue === key"
         @change="$emit('change', key)"

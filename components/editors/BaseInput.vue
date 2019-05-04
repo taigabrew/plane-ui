@@ -17,7 +17,7 @@
         :required="required"
         :name="id"
         :type="type === 'password' ? passwordType : type"
-        class="c-input px-4"
+        class="c-input px-3"
         :value="value"
         @input="input"
       />

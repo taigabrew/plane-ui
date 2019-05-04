@@ -2,8 +2,8 @@
   @apply mt-8;
 }
 
-.c-input {
-  @apply h-10 w-full bg-gray-200 rounded border border-transparent transition text-gray-700;
+.c-text-area {
+  @apply w-full bg-gray-200 rounded border border-transparent transition text-gray-700;
 
   &:hover {
     @apply bg-gray-300;
@@ -14,4 +14,12 @@
 
     outline: none;
   }
+}
+
+.c-input {
+  @apply h-10 c-text-area;
+}
+
+textarea {
+  resize: none;
 }

@@ -2,7 +2,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: [
-        'Gilam',
+        // 'Gilam',
         '-apple-system',
         'BlinkMacSystemFont',
         'Segoe UI',

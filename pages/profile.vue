@@ -24,7 +24,7 @@
         <BaseInput
           id="email"
           v-model="profile.email"
-          label="Электронная почтка"
+          label="Электронная почта"
           type="email"
         />
         <BaseInput id="tel" v-model="profile.tel" label="Телефон" type="tel" />

@@ -26,6 +26,9 @@
         name="showPassword"
         class="absolute py-2 px-3 bottom-0 right-0 transition text-blue-500 hover:text-blue-600 active:text-blue-500"
         :class="value ? 'opacity-100' : 'opacity-0'"
+        :title="
+          passwordType === 'password' ? 'Показать пароль' : 'Скрыть пароль'
+        "
         @click="toggleVisiblePassword"
       >
         <svg class="w-6 h-6 fill-current">

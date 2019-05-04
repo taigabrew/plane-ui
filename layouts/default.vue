@@ -1,12 +1,12 @@
 <template>
-  <div class="bg-gray-200 h-screen border-t-8 border-blue-500">
-    <Header class="bg-white border-b border-gray-300 py-3" />
-    <div class="flex">
+  <div class="bg-gray-200 h-screen border-t-8 border-blue-500 flex flex-col">
+    <Header class="bg-white border-b border-gray-300 py-3 flex-shrink-0" />
+    <div class="flex flex-grow overflow-hidden">
       <SideNav
-        class="pt-6 md:w-1/6 absolute md:static md:block bg-black top-0 bottom-0 mt-20 md:mt-0 left-0 px-6 md:px-0 md:bg-transparent"
+        class="p-6 md:w-1/6 absolute md:static md:block bg-black top-0 bottom-0 mt-20 md:mt-0 left-0 md:px-0 md:bg-transparent "
         :class="isOpenedSideNav ? '' : 'hidden'"
       />
-      <nuxt class="px-8 pt-8 flex-grow" />
+      <nuxt class="p-8 flex-grow overflow-y-auto" />
     </div>
   </div>
 </template>

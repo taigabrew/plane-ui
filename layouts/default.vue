@@ -1,6 +1,6 @@
 <template>
   <div class="bg-gray-200 h-screen border-t-8 border-blue-500 flex flex-col">
-    <Header class="bg-white border-b border-gray-300 py-3 flex-shrink-0" />
+    <Header class="bg-white py-3 flex-shrink-0 shadow-shade relative z-10" />
     <div class="flex flex-grow overflow-hidden">
       <SideNav
         class="p-6 md:w-1/6 absolute md:static md:block bg-black top-0 bottom-0 mt-20 md:mt-0 left-0 md:px-0 md:bg-transparent "

@@ -1,21 +1,13 @@
 module.exports = {
   theme: {
-    fontFamily: {
-      sans: [
-        // 'Gilam',
-        '-apple-system',
-        'BlinkMacSystemFont',
-        'Segoe UI',
-        'Helvetica Neue',
-        'Arial',
-        'sans-serif'
-      ]
-    },
-    inset: {
-      '0': '0',
-      auto: 'auto',
-      '1/2': '50%',
-      full: '100%'
+    extend: {
+      inset: {
+        '1/2': '50%',
+        full: '100%'
+      },
+      boxShadow: {
+        shade: '0 3px 10px rgba(0,0,0,.03), 0 1px 3px rgba(0,0,0,.02)'
+      }
     }
   },
   variants: {

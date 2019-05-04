@@ -29,10 +29,10 @@ export default {
           url: '/'
         },
         {
-          id: 'editors',
-          icon: 'pencil',
-          name: 'Редакторы',
-          url: 'inputs'
+          id: 'components',
+          icon: 'layout',
+          name: 'Компоненты',
+          url: 'components'
         },
         {
           id: 'lists',

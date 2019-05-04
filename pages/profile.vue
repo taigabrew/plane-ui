@@ -1,14 +1,44 @@
 <template>
   <div>
+    <div class="mb-6 flex justify-between">
+      <h1 class="font-bold text-sm tracking-wide uppercase text-gray-600">
+        Профиль
+      </h1>
+    </div>
     <section class="bg-white rounded shadow">
+      <InputGroup title="Общие" description="Личные данные и контакты">
+        <BaseInput id="name" v-model="profile.name" label="Имя и фамилия" />
+        <RadioGroup
+          id="gender"
+          v-model="profile.gender"
+          :items="{
+            male: {
+              label: 'Мужской'
+            },
+            female: {
+              label: 'Женский'
+            }
+          }"
+          label="Пол"
+        />
+        <BaseInput
+          id="email"
+          v-model="profile.email"
+          label="Электронная почтка"
+          type="email"
+        />
+        <BaseInput id="tel" v-model="profile.tel" label="Телефон" type="tel" />
+      </InputGroup>
       <InputGroup
-        title="Профиль"
-        description="Здесь вы можете редактировать данные вашего аккаунта"
+        title="Безопасность"
+        description="Настройки приватности и параметры авторизации"
       >
         <BaseInput
-          id="userName"
-          v-model="profile.userName"
-          label="Имя пользователя"
+          id="password"
+          v-model="profile.password"
+          label="Пароль"
+          type="password"
+          hint="Может содержать какие-то символы и все такое"
         />
       </InputGroup>
       <footer
@@ -23,13 +53,18 @@
 <script>
 import BaseInput from '~/components/editors/BaseInput'
 import InputGroup from '~/components/editors/InputGroup'
+import RadioGroup from '~/components/editors/RadioGroup'
 
 export default {
-  components: { BaseInput, InputGroup },
+  components: { BaseInput, InputGroup, RadioGroup },
   data() {
     return {
       profile: {
-        userName: 'Вася Пупкин'
+        name: 'Вася Пупкин',
+        password: '',
+        email: '',
+        tel: '',
+        gender: ''
       }
     }
   }

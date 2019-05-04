@@ -28,8 +28,8 @@ export default {
         targets: el,
         opacity: 1,
         scaleY: 1,
-        easing: 'easeOutCirc',
-        duration: 96,
+        easing: 'easeInSine',
+        duration: 50,
         complete: done
       })
     },
@@ -38,8 +38,8 @@ export default {
         targets: el,
         opacity: 0.001,
         scaleY: 0.01,
-        easing: 'easeInCirc',
-        duration: 150,
+        easing: 'easeOutSine',
+        duration: 50,
         complete: done
       })
     }

@@ -1,8 +1,8 @@
 <template>
-  <div class="px-8 py-6 flex">
-    <div class="w-1/4 pr-12">
-      <h2 class="text-xl text-gray-500 mb-1">{{ title }}</h2>
-      <p class="text-gray-400 leading-tight">
+  <div class="p-10 flex">
+    <div class="w-1/4 pr-12 leading-tight">
+      <h2 class="mb-1 font-bold text-gray-700">{{ title }}</h2>
+      <p class="text-gray-600">
         {{ description }}
       </p>
     </div>

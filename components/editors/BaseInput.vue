@@ -1,41 +1,51 @@
 <template>
-  <div class="flex flex-col">
-    <label :for="id" class="block text-sm text-gray-600 ml-3">{{
-      label
-    }}</label>
-    <p :id="`${id}hint`">{{ hint }}</p>
-    <input
-      :id="id"
-      :aria-describedby="`${id}hint`"
-      :aria-invalid="!!error"
-      :name="id"
-      :type="type"
-      class="c-input max-w-sm px-4"
-      :value="value"
-      @input="input"
-    />
+  <div class="flex flex-col c-input-wrap">
+    <label
+      :for="id"
+      class="block text-gray-700 font-semibold leading-tight mb-1"
+      >{{ label }}</label
+    >
+    <p :id="`${id}hint`" class="text-sm text-gray-500 mb-3 -mt-1" v-if="hint">
+      {{ hint }}
+    </p>
+    <div class="relative max-w-sm">
+      <input
+        :id="id"
+        :aria-describedby="`${id}hint`"
+        :aria-invalid="!!error"
+        :aria-required="required"
+        :required="required"
+        :name="id"
+        :type="type === 'password' ? passwordType : type"
+        class="c-input px-4"
+        :value="value"
+        @input="input"
+      />
+      <button
+        v-if="type === 'password'"
+        name="showPassword"
+        @click="toggleVisiblePassword"
+        class="absolute py-2 px-3 bottom-0 right-0"
+      >
+        <svg class="w-6 h-6 fill-current text-blue-500">
+          <use
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            :xlink:href="
+              `/icons.svg#${passwordType === 'password' ? 'eye' : 'eye-close'}`
+            "
+          />
+        </svg>
+      </button>
+    </div>
   </div>
 </template>
 
 <script>
+import { baseInput } from '~/assets/js/mixins.js'
+
 export default {
+  mixins: [baseInput],
   props: {
-    id: {
-      type: String,
-      required: true
-    },
-    label: {
-      type: String,
-      required: true
-    },
-    hint: {
-      type: String,
-      default: ''
-    },
-    value: {
-      type: String,
-      default: ''
-    },
     type: {
       type: String,
       default: 'text'
@@ -43,11 +53,23 @@ export default {
     error: {
       type: String,
       default: ''
+    },
+    required: {
+      type: Boolean,
+      default: false
+    }
+  },
+  data() {
+    return {
+      passwordType: 'password'
     }
   },
   methods: {
     input(event) {
       this.$emit('input', event.target.value)
+    },
+    toggleVisiblePassword() {
+      this.passwordType = this.passwordType === 'password' ? 'text' : 'password'
     }
   }
 }

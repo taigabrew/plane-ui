@@ -15,7 +15,7 @@
       :aria-required="required"
       :required="required"
       :name="id"
-      class="c-text-area px-4 py-2 h-32 max-w-sm"
+      class="c-text-area px-3 py-2 h-32 max-w-sm"
       :value="value"
       @input="input"
     />

@@ -40,12 +40,7 @@
           class="pl-4 pr-8 py-1 hover:bg-gray-200 flex items-center user-nav-link text-gray-600 transition"
           :to="nav.url"
         >
-          <svg class="w-6 h-6 fill-current mr-2">
-            <use
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              :xlink:href="`/icons.svg#${nav.icon}`"
-            />
-          </svg>
+          <Icon class="mr-2 flex-shrink-0" :name="nav.icon" :size="6" />
           {{ nav.name }}
         </nuxt-link>
       </div>
@@ -55,9 +50,10 @@
 
 <script>
 import CollapseTransition from '~/components/animations/CollapseTransition'
+import Icon from '~/components/Icon'
 
 export default {
-  components: { CollapseTransition },
+  components: { CollapseTransition, Icon },
   data() {
     return {
       isOpened: false,

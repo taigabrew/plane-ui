@@ -6,19 +6,17 @@
       :to="item.url"
       class="no-underline flex items-center hover:bg-gray-100 py-2 px-5 rounded-sm text-gray-500 border-l-4 border-transparent active:bg-transparent transition side-nav-link"
     >
-      <svg class="w-5 h-5 mr-3 fill-current flex-shrink-0">
-        <use
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          :xlink:href="`/icons.svg#${item.icon}`"
-        />
-      </svg>
+      <Icon class="mr-3 flex-shrink-0" :name="item.icon" :size="5" />
       {{ item.name }}
     </nuxt-link>
   </aside>
 </template>
 
 <script>
+import Icon from '~/components/Icon'
+
 export default {
+  components: { Icon },
   data() {
     return {
       navlist: [

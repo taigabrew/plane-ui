@@ -31,23 +31,23 @@
         "
         @click="toggleVisiblePassword"
       >
-        <svg class="w-6 h-6 fill-current">
-          <use
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            :xlink:href="
-              `/icons.svg#${passwordType === 'password' ? 'eye' : 'eye-close'}`
-            "
-          />
-        </svg>
+        <Icon
+          :name="
+            `/icons.svg#${passwordType === 'password' ? 'eye' : 'eye-close'}`
+          "
+          :size="6"
+        />
       </button>
     </div>
   </div>
 </template>
 
 <script>
+import Icon from '~/components/Icon'
 import { baseInput } from '~/assets/js/mixins.js'
 
 export default {
+  components: { Icon },
   mixins: [baseInput],
   props: {
     type: {

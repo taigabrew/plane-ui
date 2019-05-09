@@ -10,7 +10,7 @@
   }
 
   &:focus {
-    @apply border-gray-300 bg-white;
+    @apply border-gray-300 bg-white shadow-focus;
 
     outline: none;
   }

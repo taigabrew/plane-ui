@@ -1,20 +1,21 @@
 <template>
-  <div class="rounded" :class="{ 'shadow-outline': tabsFocused }">
+  <div>
     <ul role="tablist" class="flex">
       <li v-for="(item, key, index) in list" :key="key" role="presentation">
         <a
           :id="`tab${key}`"
-          role="tab"
           :ref="`tab${key}`"
+          role="tab"
           :href="`#section${key}`"
           :aria-selected="index === selectedIndex"
           :tabindex="index === 0 ? null : '-1'"
           class="px-4 pt-2 pb-3 border-t-4 rounded-t transition block outline-none"
-          :class="
+          :class="[
             index === selectedIndex
               ? 'bg-white border-blue-500 text-blue-800'
-              : 'bg-transparent border-transparent text-gray-700'
-          "
+              : 'bg-transparent border-transparent text-gray-700',
+            { 'shadow-outline': index === selectedIndex && tabsFocused }
+          ]"
           @click.prevent="$refs[`tab${key}`][0].focus"
           @blur="tabsFocused = false"
           @focus="selectTab(index)"

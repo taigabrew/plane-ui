@@ -14,7 +14,7 @@ module.exports = {
         transform: 'transform',
         text: 'color',
         shadow: 'box-shadow',
-        colors: ['color', 'background-color', 'border-color'],
+        colors: ['color', 'background-color', 'border-color', 'shadow'],
         cheap: ['opacity', 'transform']
       },
       transitionDuration: {

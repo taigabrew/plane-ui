@@ -13,13 +13,18 @@ module.exports = {
         bg: 'background-color',
         transform: 'transform',
         text: 'color',
+        shadow: 'box-shadow',
         colors: ['color', 'background-color', 'border-color'],
         cheap: ['opacity', 'transform']
       },
       transitionDuration: {
-        '325': '325ms'
+        '250': '250ms',
+        '325': '325ms',
+        '500': '500ms'
       },
       transitionTimingFunction: {
+        'out-sine': 'cubic-bezier(0.39, 0.575, 0.565, 1)',
+        'out-cubic': 'cubic-bezier(0.215, 0.61, 0.355, 1)',
         'out-quart': 'cubic-bezier(0.165, 0.84, 0.44, 1)'
       }
     }

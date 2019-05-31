@@ -36,13 +36,13 @@
           class="text-sm cursor-pointer flex items-center"
           :class="
             buttons
-              ? 'text-white px-5 py-2 transition hover:bg-blue-600 active:bg-blue-500 select-none font-light tracking-wide c-radio__btn-label'
+              ? 'text-white px-5 py-2 transition-bg transition-250 transition-out-sine hover:bg-blue-600 active:bg-blue-500 select-none font-light tracking-wide c-radio__btn-label'
               : 'text-gray-700'
           "
         >
           <Icon
             :name="modelValue === key ? 'circle-with-bullet' : 'circle'"
-            class="w-6 h-6 text-blue-500 rounded-full transition mr-1 c-radio__bullet"
+            class="w-6 h-6 text-blue-500 rounded-full transition-325 transition-out-quart transition-shadow mr-1 c-radio__bullet"
           />
           {{ item.label }}
         </label>

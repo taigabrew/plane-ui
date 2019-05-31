@@ -9,7 +9,7 @@
           :href="`#section${key}`"
           :aria-selected="index === selectedIndex"
           :tabindex="index === 0 ? null : '-1'"
-          class="px-4 pt-2 pb-3 border-t-4 rounded-t transition block outline-none"
+          class="px-4 pt-2 pb-3 border-t-4 rounded-t transition-colors transition-250 transition-out-sine block outline-none"
           :class="[
             index === selectedIndex
               ? 'bg-white border-blue-500 text-blue-800'

@@ -51,7 +51,7 @@ body,
 
 @media screen and (prefers-reduced-motion: reduce) {
   * {
-    animation-duration: 0.1s !important;
+    animation-duration: 0s !important;
     transition-duration: 0.1s !important;
   }
 }

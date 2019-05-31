@@ -4,7 +4,7 @@
       v-for="item in navlist"
       :key="item.id"
       :to="item.url"
-      class="no-underline flex items-center hover:bg-gray-100 py-2 px-5 rounded-sm text-gray-500 border-l-4 border-transparent active:bg-transparent transition side-nav-link"
+      class="no-underline flex items-center hover:bg-gray-100 py-2 px-5 rounded-sm text-gray-500 border-l-4 border-transparent active:bg-transparent transition-colors transition-out-sine transition-250 side-nav-link"
     >
       <Icon class="w-5 h-5 mr-3 flex-shrink-0" :name="item.icon" />
       {{ item.name }}

@@ -7,7 +7,7 @@
     <input
       type="text"
       class="c-input pl-12"
-      placeholder="Поиск (Нажмите '/' чтобы фокусировки)"
+      placeholder="Поиск (Нажмите '/' чтобы сфокусироваться)"
     />
   </div>
 </template>

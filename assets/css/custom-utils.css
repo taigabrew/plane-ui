@@ -5,7 +5,3 @@
 .translate-y-50 {
   transform: translateY(-50%);
 }
-
-.transition {
-  transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-}

@@ -11,7 +11,7 @@
     >
       <Icon
         :name="action.icon"
-        class="w-6 h-6 text-gray-400 hover:text-gray-600 transition"
+        class="w-6 h-6 text-gray-400 hover:text-gray-600 transition-325 transition-out-cubic transition-text"
       />
       <span
         v-if="action.unreadItems"

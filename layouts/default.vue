@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-200 h-screen border-t-8 border-blue-500 flex flex-col">
+  <div class="bg-gray-200 h-screen flex flex-col">
     <Header class="bg-white py-3 flex-shrink-0 shadow-shade relative z-10" />
     <div class="flex flex-grow overflow-hidden">
       <SideNav

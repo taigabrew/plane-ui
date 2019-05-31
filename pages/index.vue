@@ -1,21 +1,19 @@
 <template>
   <section>
-    <!-- <div class="mb-6 flex justify-between">
-      <h1 class="font-bold text-sm tracking-wide uppercase text-gray-600">
-        Привет
-      </h1>
-      <div>контекстные действия</div>
-    </div> -->
-    <div
-      class="bg-white rounded shadow-md py-6 px-8 border-l-8 border-red-500 text-red-800"
-    >
-      Проект находиться в разработке
+    <div class="bg-white rounded shadow py-12 px-12">
+      <div
+        class="bg-red-100 border-l-4 border-red-500 text-red-900 mb-8 max-w-sm px-5 py-3"
+      >
+        Проект находиться в разработке
+      </div>
+
+      <p class="max-w-lg text-gray-700">
+        На данный момент почти на всех страницах пустые заглушки. Верстка
+        базовых компонентов и их тестирование ведется на странице
+        <nuxt-link class="underline text-blue-500" to="/profile"
+          >профиля</nuxt-link
+        >
+      </p>
     </div>
   </section>
 </template>
-
-<script>
-export default {
-  components: {}
-}
-</script>

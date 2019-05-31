@@ -40,7 +40,7 @@
           class="pl-4 pr-8 py-1 hover:bg-gray-200 flex items-center user-nav-link text-gray-600 transition"
           :to="nav.url"
         >
-          <Icon class="mr-2 flex-shrink-0" :name="nav.icon" :size="6" />
+          <Icon class="w-6 h-6 mr-2 flex-shrink-0" :name="nav.icon" />
           {{ nav.name }}
         </nuxt-link>
       </div>

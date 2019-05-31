@@ -1,8 +1,8 @@
 <template>
-  <svg class="fill-current" :class="`w-${size} h-${size}`">
+  <svg class="fill-current">
     <use
       xmlns:xlink="http://www.w3.org/1999/xlink"
-      :xlink:href="`/icons/icons.svg#${name}`"
+      :xlink:href="`/icons.svg#${name}`"
     />
   </svg>
 </template>
@@ -13,10 +13,6 @@ export default {
     name: {
       type: String,
       default: ''
-    },
-    size: {
-      type: Number,
-      default: 4
     }
   }
 }

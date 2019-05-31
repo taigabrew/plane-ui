@@ -35,7 +35,7 @@
           :name="
             `/icons.svg#${passwordType === 'password' ? 'eye' : 'eye-close'}`
           "
-          :size="6"
+          class="w-6 h-6"
         />
       </button>
     </div>

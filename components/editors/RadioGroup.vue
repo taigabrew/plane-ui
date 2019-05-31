@@ -40,19 +40,10 @@
               : 'text-gray-700'
           "
         >
-          <svg
-            v-if="!buttons"
-            class="w-6 h-6 fill-current text-blue-500 rounded-full transition mr-1 c-radio__bullet"
-          >
-            <use
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              :xlink:href="
-                `/icons.svg#${
-                  modelValue === key ? 'circle-with-bullet' : 'circle'
-                }`
-              "
-            />
-          </svg>
+          <Icon
+            :name="modelValue === key ? 'circle-with-bullet' : 'circle'"
+            class="w-6 h-6 text-blue-500 rounded-full transition mr-1 c-radio__bullet"
+          />
           {{ item.label }}
         </label>
       </div>
@@ -61,7 +52,10 @@
 </template>
 
 <script>
+import Icon from '~/components/Icon'
+
 export default {
+  components: { Icon },
   model: {
     prop: 'modelValue',
     event: 'change'
@@ -107,19 +101,6 @@ export default {
     @apply bg-blue-500;
   }
 
-  .c-radio__input:checked + & {
-    @apply bg-blue-600 shadow-inner;
-  }
-
-  .c-radio__input:focus + & {
-    @apply shadow-outline;
-  }
-
-  .c-radio__input:checked:focus + & {
-    box-shadow: 0 0 0 3px theme('colors.blue.300'),
-      inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
-  }
-
   .c-radio__wrap:first-child & {
     @apply rounded-t;
   }
@@ -134,6 +115,19 @@ export default {
 
   .c-radio__inline-wrap:last-child & {
     @apply rounded-r;
+  }
+
+  .c-radio__input:checked + & {
+    @apply bg-blue-600 shadow-inner;
+  }
+
+  .c-radio__input:focus + & {
+    @apply shadow-outline;
+  }
+
+  .c-radio__input:checked:focus + & {
+    box-shadow: 0 0 0 3px theme('colors.blue.300'),
+      inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
   }
 }
 

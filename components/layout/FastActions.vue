@@ -1,57 +1,50 @@
 <template>
   <div class="inline-flex items-center">
-    <nuxt-link to="/notifications" class="mr-4">
-      <svg
-        class="w-6 h-6 fill-current text-gray-400 hover:text-gray-600 transition"
-      >
-        <use
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          xlink:href="/icons.svg#bell"
-        />
-      </svg>
-    </nuxt-link>
-    <nuxt-link to="/mail" class="mr-4 relative">
-      <svg
-        class="w-6 h-6 fill-current text-gray-400 hover:text-gray-600 transition"
-      >
-        <use
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          xlink:href="/icons.svg#envelope"
-        />
-      </svg>
+    <component
+      :is="actionName === 'chat' ? 'button' : 'nuxt-link'"
+      v-for="(action, actionName, index) in actions"
+      :key="actionName"
+      :to="actionName !== 'chat' ? action.src : null"
+      :aria-label="action.label"
+      class="relative"
+      :class="{ 'mr-4': index < Object.keys(actions).length - 1 }"
+    >
+      <Icon
+        :name="action.icon"
+        class="w-6 h-6 text-gray-400 hover:text-gray-600 transition"
+      />
       <span
+        v-if="action.unreadItems"
         class="absolute text-xs bg-blue-100 rounded text-blue-600 border border-blue-600 px-1 leading-tight left-full top-0 translate-xy-50 "
-        >15</span
+        >{{ action.unreadItems }}</span
       >
-    </nuxt-link>
-    <button>
-      <svg
-        class="w-6 h-6 fill-current text-gray-400 hover:text-gray-600 transition"
-      >
-        <use
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          xlink:href="/icons.svg#message"
-        />
-      </svg>
-    </button>
+    </component>
   </div>
 </template>
 
 <script>
+import Icon from '~/components/Icon'
+
 export default {
+  components: { Icon },
   data() {
     return {
       actions: {
         notifications: {
           unreadItems: 0,
+          src: '/notifications',
+          label: 'Уведомления',
           icon: 'bell'
         },
         mail: {
           unreadItems: 15,
+          src: '/mail',
+          label: 'Письма',
           icon: 'envelope'
         },
         chat: {
           unreadItems: 0,
+          label: 'Сообщения',
           icon: 'message'
         }
       }

@@ -28,7 +28,12 @@
           type="email"
         />
         <BaseInput id="tel" v-model="profile.tel" label="Телефон" type="tel" />
-        <TextArea id="about" v-model="profile.about" label="Обо мне" />
+        <BaseInput
+          id="about"
+          v-model="profile.about"
+          label="Обо мне"
+          textarea
+        />
       </InputGroup>
       <InputGroup
         title="Безопасность"
@@ -55,10 +60,10 @@
 import BaseInput from '~/components/editors/BaseInput'
 import InputGroup from '~/components/editors/InputGroup'
 import RadioGroup from '~/components/editors/RadioGroup'
-import TextArea from '~/components/editors/TextArea'
+// import TextArea from '~/components/editors/TextArea'
 
 export default {
-  components: { BaseInput, InputGroup, RadioGroup, TextArea },
+  components: { BaseInput, InputGroup, RadioGroup },
   data() {
     return {
       profile: {

@@ -9,32 +9,36 @@
       {{ hint }}
     </p>
     <div class="relative max-w-sm">
-      <input
+      <component
+        :is="textarea ? 'textarea' : 'input'"
         :id="id"
         :aria-describedby="`${id}hint`"
         :aria-invalid="!!error"
         :aria-required="required"
         :required="required"
         :name="id"
-        :type="type === 'password' ? passwordType : type"
-        class="c-input px-3"
+        :type="textarea ? null : type === 'password' ? passwordType : type"
+        class="px-3"
+        :class="textarea ? 'py-2 h-32 c-text-area' : 'c-input'"
         :value="value"
-        @input="input"
+        @input="update"
       />
       <button
         v-if="type === 'password'"
         name="showPassword"
-        class="absolute py-2 px-3 bottom-0 right-0 transition text-blue-500 hover:text-blue-600 active:text-blue-500"
-        :class="value ? 'opacity-100' : 'opacity-0'"
+        class="absolute py-2 px-3 bottom-0 right-0 transition-text transition-out-cubic transition-250"
+        :class="
+          value
+            ? 'text-blue-500 hover:text-blue-600 active:text-blue-500'
+            : 'text-gray-400'
+        "
         :title="
           passwordType === 'password' ? 'Показать пароль' : 'Скрыть пароль'
         "
         @click="toggleVisiblePassword"
       >
         <Icon
-          :name="
-            `/icons.svg#${passwordType === 'password' ? 'eye' : 'eye-close'}`
-          "
+          :name="passwordType === 'password' ? 'eye' : 'eye-close'"
           class="w-6 h-6"
         />
       </button>
@@ -44,12 +48,30 @@
 
 <script>
 import Icon from '~/components/Icon'
-import { baseInput } from '~/assets/js/mixins.js'
 
 export default {
   components: { Icon },
-  mixins: [baseInput],
+  inheritAttrs: false,
+  model: {
+    event: 'update'
+  },
   props: {
+    id: {
+      type: String,
+      required: true
+    },
+    label: {
+      type: String,
+      required: true
+    },
+    hint: {
+      type: String,
+      default: ''
+    },
+    value: {
+      type: String,
+      default: ''
+    },
     type: {
       type: String,
       default: 'text'
@@ -61,6 +83,10 @@ export default {
     required: {
       type: Boolean,
       default: false
+    },
+    textarea: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -69,8 +95,8 @@ export default {
     }
   },
   methods: {
-    input(event) {
-      this.$emit('input', event.target.value)
+    update(event) {
+      this.$emit('update', event.target.value)
     },
     toggleVisiblePassword() {
       this.passwordType = this.passwordType === 'password' ? 'text' : 'password'

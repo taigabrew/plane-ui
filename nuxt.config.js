@@ -1,14 +1,8 @@
-import path from 'path'
-import PurgecssPlugin from 'purgecss-webpack-plugin'
-import glob from 'glob-all'
+import resolveConfig from 'tailwindcss/resolveConfig'
+import tailwindConfig from './tailwind.config'
 import pkg from './package'
 
-class TailwindExtractor {
-  static extract(content) {
-    return content.match(/[A-z0-9-:/]+/g) || []
-  }
-}
-
+const colors = resolveConfig(tailwindConfig).theme.colors
 const siteTitle = 'danil.dev | Dashboad demo'
 
 export default {
@@ -61,11 +55,16 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/png', href: '/icon.png' }]
   },
+  manifest: {
+    background_color: colors.blue['500'],
+    theme_color: colors.blue['500'],
+    lang: 'ru'
+  },
 
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: colors.blue['500'] },
 
   /*
    ** Global CSS
@@ -75,7 +74,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['~/plugins/test-directive.js'],
 
   /*
    ** Nuxt.js modules
@@ -92,7 +91,8 @@ export default {
         }
       }
     ],
-    ['@nuxtjs/pwa', { meta: false }]
+    ['@nuxtjs/pwa', { meta: false }],
+    'nuxt-purgecss'
   ],
 
   /*
@@ -107,6 +107,10 @@ export default {
         autoprefixer: {}
       }
     },
+    filenames: {
+      css: ({ isDev }) => (isDev ? '[name].css' : '[hash:7].[contenthash].css')
+      // isDev ? '[name].css' : '[contenthash].css'
+    },
     /*
      ** You can extend webpack config here
      */
@@ -119,27 +123,6 @@ export default {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
-      }
-
-      if (!ctx.isDev) {
-        config.plugins.push(
-          new PurgecssPlugin({
-            // purgecss configuration
-            // https://github.com/FullHuman/purgecss
-            paths: glob.sync([
-              path.join(__dirname, './pages/**/*.vue'),
-              path.join(__dirname, './layouts/**/*.vue'),
-              path.join(__dirname, './components/**/*.vue')
-            ]),
-            extractors: [
-              {
-                extractor: TailwindExtractor,
-                extensions: ['vue']
-              }
-            ],
-            whitelist: ['html', 'body', 'nuxt-progress']
-          })
-        )
       }
     }
   }

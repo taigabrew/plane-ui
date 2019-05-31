@@ -11,8 +11,7 @@
       class="absolute left-full top-full w-3 h-3 border border-white rounded-full online-status-indicator"
       :class="statuses[onlineStatus].className"
     />
-    {{/*classes for PurgeCSS*/}}
-    <!-- <span class="bg-green-400 bg-red-500 bg-yellow-500" /> -->
+    <!-- <span class="bg-green-400 bg-red-500 bg-yellow-500">Классы для PurgeCSS</span> -->
     <CollapseTransition>
       <div
         v-if="isOpened"

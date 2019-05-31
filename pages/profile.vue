@@ -5,7 +5,7 @@
         Профиль
       </h1>
     </div>
-    <section class="bg-white rounded shadow">
+    <form class="bg-white rounded shadow" @submit.prevent="handleSubmit">
       <InputGroup title="Общие" description="Личные данные и контакты">
         <BaseInput id="name" v-model="profile.name" label="Имя и фамилия" />
         <RadioGroup
@@ -50,9 +50,9 @@
       <footer
         class="bg-gray-100 flex justify-end items-center px-5 py-4 rounded-b"
       >
-        <button class="btn btn--action">Сохранить</button>
+        <button class="btn btn--action" type="submit">Сохранить</button>
       </footer>
-    </section>
+    </form>
   </div>
 </template>
 
@@ -60,7 +60,6 @@
 import BaseInput from '~/components/editors/BaseInput'
 import InputGroup from '~/components/editors/InputGroup'
 import RadioGroup from '~/components/editors/RadioGroup'
-// import TextArea from '~/components/editors/TextArea'
 
 export default {
   components: { BaseInput, InputGroup, RadioGroup },
@@ -74,6 +73,11 @@ export default {
         gender: '',
         about: ''
       }
+    }
+  },
+  methods: {
+    handleSubmit() {
+      console.log('Нажали на «Сохранить»')
     }
   }
 }

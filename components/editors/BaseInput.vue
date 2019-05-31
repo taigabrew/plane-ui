@@ -1,24 +1,24 @@
 <template>
   <div class="flex flex-col c-input-wrap">
     <label
+      v-test="{ id: 'label' }"
       :for="id"
       class="block text-gray-700 font-semibold leading-tight mb-1"
-      v-test="{ id: 'label' }"
       >{{ label }}</label
     >
     <p
-      v-test="{ id: 'hint' }"
       v-if="hint"
       :id="`${id}hint`"
+      v-test="{ id: 'hint' }"
       class="text-sm text-gray-500 mb-3 -mt-1"
     >
       {{ hint }}
     </p>
     <div class="relative max-w-sm">
       <component
-        v-test="{ id: 'field' }"
         :is="textarea ? 'textarea' : 'input'"
         :id="id"
+        v-test="{ id: 'field' }"
         :aria-describedby="hint ? `${id}hint` : null"
         :aria-invalid="!!error"
         :aria-required="required"
@@ -31,8 +31,8 @@
         @input="update"
       />
       <button
-        v-test="{ id: 'togglePasswordVisibility' }"
         v-if="type === 'password'"
+        v-test="{ id: 'togglePasswordVisibility' }"
         name="showPassword"
         class="absolute py-2 px-3 bottom-0 right-0 transition-text transition-out-cubic transition-250"
         :class="

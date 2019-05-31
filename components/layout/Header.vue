@@ -1,11 +1,11 @@
 <template>
   <header class="flex justify-between">
-    <div class="flex items-center w-1/6 pl-8">
-      <button class="mr-2 md:hidden" @click="toggleSideNav">
-        <Icon class="w-10 h-10 text-black" name="menu" />
+    <div class="flex items-center w-1/6 pl-4 text-blue-500">
+      <button class="mr-2 lg:hidden" @click="toggleSideNav">
+        <Icon class="w-10 h-10" name="menu" />
       </button>
       <nuxt-link
-        class="font-bold text-2xl md:text-lg text-blue-500 inline-flex items-center leading-wide whitespace-no-wrap"
+        class="font-bold text-2xl md:text-lg inline-flex items-center leading-wide whitespace-no-wrap"
         to="/"
       >
         Dash Demo

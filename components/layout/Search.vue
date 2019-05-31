@@ -1,5 +1,5 @@
 <template>
-  <div class="hidden md:block w-2/3 flex-shrink-0 px-8 relative">
+  <div class="hidden md:block flex-grow lg:w-2/3 px-8 relative">
     <Icon
       class="w-6 h-6 text-gray-500 absolute ml-3 translate-y-50 top-1/2"
       name="search"

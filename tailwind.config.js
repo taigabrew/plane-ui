@@ -1,13 +1,18 @@
+const { colors, fontFamily } = require('tailwindcss/defaultTheme')
+
 module.exports = {
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['IBM Plex Sans', ...fontFamily.sans]
+      },
       inset: {
         '1/2': '50%',
         full: '100%'
       },
       boxShadow: {
         shade: '0 3px 10px rgba(0,0,0,.03), 0 1px 3px rgba(0,0,0,.02)',
-        focus: `0 0 0 3px ${theme => theme('colors.blue.300')}`
+        focus: `0 0 0 3px ${colors.blue['300']}`
       },
       transitionProperty: {
         bg: 'background-color',

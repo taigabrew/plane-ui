@@ -53,7 +53,14 @@ export default {
         content: `${pkg.homepage}/icon.png`
       }
     ],
-    link: [{ rel: 'icon', type: 'image/png', href: '/icon.png' }]
+    link: [
+      { rel: 'icon', type: 'image/png', href: '/icon.png' },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600&display=swap&subset=cyrillic'
+      }
+    ]
   },
   manifest: {
     background_color: colors.blue['500'],
@@ -74,7 +81,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/test-directive.js'],
+  plugins: ['~/plugins/test-directive.js', '~/plugins/vue-function-api.js'],
 
   /*
    ** Nuxt.js modules

@@ -7,7 +7,7 @@
     </div>
     <form class="bg-white rounded shadow" @submit.prevent="handleSubmit">
       <InputGroup title="Общие" description="Личные данные и контакты">
-        <BaseInput id="name" v-model="profile.name" label="Имя и фамилия" />
+        <TextEditor id="name" v-model="profile.name" label="Имя и фамилия" />
         <RadioGroup
           id="gender"
           v-model="profile.gender"
@@ -21,14 +21,14 @@
           }"
           label="Пол"
         />
-        <BaseInput
+        <TextEditor
           id="email"
           v-model="profile.email"
           label="Электронная почта"
           type="email"
         />
-        <BaseInput id="tel" v-model="profile.tel" label="Телефон" type="tel" />
-        <BaseInput
+        <TextEditor id="tel" v-model="profile.tel" label="Телефон" type="tel" />
+        <TextEditor
           id="about"
           v-model="profile.about"
           label="Обо мне"
@@ -39,7 +39,7 @@
         title="Безопасность"
         description="Настройки приватности и параметры авторизации"
       >
-        <BaseInput
+        <PasswordEditor
           id="password"
           v-model="profile.password"
           label="Пароль"
@@ -57,12 +57,13 @@
 </template>
 
 <script>
-import BaseInput from '~/components/editors/BaseInput'
+import TextEditor from '~/components/editors/TextEditor'
 import InputGroup from '~/components/editors/InputGroup'
 import RadioGroup from '~/components/editors/RadioGroup'
+import PasswordEditor from '~/components/editors/PasswordEditor'
 
 export default {
-  components: { BaseInput, InputGroup, RadioGroup },
+  components: { TextEditor, InputGroup, RadioGroup, PasswordEditor },
   data() {
     return {
       profile: {

@@ -1,16 +1,11 @@
 <template>
-  <component
-    :is="isTextArea ? 'textarea' : 'input'"
-    :id="id"
+  <input
+    v-bind="{ id, required, type, value }"
     :aria-describedby="hint ? `${id}hint` : null"
     :aria-invalid="!!error"
     :aria-required="required"
-    :required="required"
     :name="id"
-    :type="isTextArea ? null : type"
-    class="px-3"
-    :class="isTextArea ? 'py-2 h-32 c-text-area' : 'c-input'"
-    :value="value"
+    class="c-input px-3"
     @input="update"
   />
 </template>
@@ -38,10 +33,6 @@ export default {
       type: String,
       default: null
     },
-    isTextArea: {
-      type: Boolean,
-      default: false
-    },
     hint: {
       type: String,
       default: ''
@@ -49,9 +40,13 @@ export default {
     value: {
       type: String,
       default: ''
+    },
+    autocomplete: {
+      type: String,
+      default: null
     }
   },
-  setup(props, { emit }) {
+  setup(props, { emit, attrs }) {
     const update = e => emit('update', e.target.value)
     return { update }
   }

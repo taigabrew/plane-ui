@@ -20,10 +20,10 @@
 </template>
 
 <script>
-import { mutations } from '~/store/'
 import Search from './Search'
 import FastActions from './FastActions'
 import UserArea from './UserArea'
+import { mutations } from '~/store/'
 import Icon from '~/components/Icon'
 
 export default {

@@ -43,7 +43,7 @@ export default {
       type: String,
       default: 'text',
       validator(value) {
-        return ['text', 'email', 'tel', 'search'].indexOf(value) !== -1
+        return ['text', 'email', 'tel', 'search'].includes(value)
       }
     }
   },

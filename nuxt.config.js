@@ -81,7 +81,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/test-directive.js', '~/plugins/vue-function-api.js'],
+  plugins: ['~/plugins/test-directive.js', '~/plugins/composition-api.js'],
 
   /*
    ** Nuxt.js modules

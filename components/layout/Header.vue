@@ -1,7 +1,7 @@
 <template>
   <header class="flex justify-between">
     <div class="flex items-center w-1/6 pl-4 text-blue-500">
-      <button class="mr-2 lg:hidden" @click="toggleSideNav">
+      <button @click="toggleSideNav" class="mr-2 lg:hidden">
         <Icon class="w-10 h-10" name="menu" />
       </button>
       <nuxt-link
@@ -20,11 +20,12 @@
 </template>
 
 <script>
-import { mutations } from '~/store/'
 import Search from './Search'
 import FastActions from './FastActions'
 import UserArea from './UserArea'
+
 import Icon from '~/components/Icon'
+import { mutations } from '~/store/'
 
 export default {
   components: { Search, FastActions, UserArea, Icon },

@@ -5,11 +5,9 @@
         <a
           :id="`tab${key}`"
           :ref="`tab${key}`"
-          role="tab"
           :href="`#section${key}`"
           :aria-selected="index === selectedIndex"
           :tabindex="index === 0 ? null : '-1'"
-          class="px-4 pt-2 pb-3 border-t-4 rounded-t transition-colors transition-250 transition-out-sine block outline-none"
           :class="[
             index === selectedIndex
               ? 'bg-white border-blue-500 text-blue-800'
@@ -21,6 +19,8 @@
           @focus="selectTab(index)"
           @keyup.left="switchTab('left')"
           @keyup.right="switchTab('right')"
+          role="tab"
+          class="px-4 pt-2 pb-3 border-t-4 rounded-t transition-colors transition-250 transition-out-sine block outline-none"
         >
           {{ item }}
         </a>
@@ -30,9 +30,9 @@
       v-for="(item, key, index) in $slots"
       :id="`section${key}`"
       :key="key"
-      role="tabpanel"
       :aria-labelledby="`tab${key}`"
       :hidden="index !== selectedIndex"
+      role="tabpanel"
       class="bg-white shadow rounded-b"
     >
       <slot :name="key" />

@@ -1,22 +1,27 @@
 <template>
-  <component
-    :is="isTextArea ? 'textarea' : 'input'"
-    :id="id"
+  <input
+    v-test="{ id: 'field' }"
+    v-bind="{ id, name: id, autocomplete, type, value, dataCy, required }"
     :aria-describedby="hint ? `${id}hint` : null"
     :aria-invalid="!!error"
     :aria-required="required"
-    :required="required"
-    :name="id"
-    :type="isTextArea ? null : type"
-    class="px-3"
-    :class="isTextArea ? 'py-2 h-32 c-text-area' : 'c-input'"
-    :value="value"
+    :data-vv-name="type === 'tel' ? 'phone' : null"
+    :inputmode="numeric ? 'numeric' : null"
+    :pattern="numeric ? '[0-9]*' : null"
+    :disabled="readOnly"
+    :class="{ 'c-input--readonly': readOnly }"
     @input="update"
+    @keyup.stop
+    v-on="listeners"
+    class="c-input px-3"
   />
 </template>
 
 <script>
+import extractOtherListerners from '~/functions/extarctOtherListeners'
+
 export default {
+  name: 'BaseInput',
   model: {
     event: 'update'
   },
@@ -34,13 +39,13 @@ export default {
       type: Boolean,
       default: false
     },
+    readOnly: {
+      type: Boolean,
+      default: false
+    },
     error: {
       type: String,
       default: null
-    },
-    isTextArea: {
-      type: Boolean,
-      default: false
     },
     hint: {
       type: String,
@@ -49,11 +54,31 @@ export default {
     value: {
       type: String,
       default: ''
+    },
+    autocomplete: {
+      type: String,
+      default: null
+    },
+    numeric: {
+      type: Boolean,
+      default: null
+    },
+    dataCy: {
+      type: String,
+      default: null
     }
   },
-  setup(props, { emit }) {
-    const update = e => emit('update', e.target.value)
-    return { update }
+  setup(props, ctx) {
+    const listeners = extractOtherListerners(ctx, ['update'])
+
+    const update = event => {
+      ctx.emit('update', event.target.value)
+    }
+
+    return {
+      listeners,
+      update
+    }
   }
 }
 </script>

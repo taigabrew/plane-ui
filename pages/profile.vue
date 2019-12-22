@@ -5,7 +5,7 @@
         Профиль
       </h1>
     </div>
-    <form class="bg-white rounded shadow" @submit.prevent="handleSubmit">
+    <form @submit.prevent="handleSubmit" class="bg-white rounded shadow">
       <InputGroup title="Общие" description="Личные данные и контакты">
         <TextEditor id="name" v-model="profile.name" label="Имя и фамилия" />
         <RadioGroup
@@ -28,12 +28,7 @@
           type="email"
         />
         <TextEditor id="tel" v-model="profile.tel" label="Телефон" type="tel" />
-        <TextEditor
-          id="about"
-          v-model="profile.about"
-          label="Обо мне"
-          textarea
-        />
+        <TextAreaEditor id="about" v-model="profile.about" label="Обо мне" />
       </InputGroup>
       <InputGroup
         title="Безопасность"
@@ -58,12 +53,19 @@
 
 <script>
 import TextEditor from '~/components/editors/TextEditor'
+import TextAreaEditor from '~/components/editors/TextAreaEditor'
 import InputGroup from '~/components/editors/InputGroup'
 import RadioGroup from '~/components/editors/RadioGroup'
 import PasswordEditor from '~/components/editors/PasswordEditor'
 
 export default {
-  components: { TextEditor, InputGroup, RadioGroup, PasswordEditor },
+  components: {
+    TextEditor,
+    TextAreaEditor,
+    InputGroup,
+    RadioGroup,
+    PasswordEditor
+  },
   data() {
     return {
       profile: {

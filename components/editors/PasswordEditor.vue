@@ -1,6 +1,6 @@
 <template>
   <InputWrap v-bind="{ id, label, hint }">
-    <BaseInput v-bind="{ id, hint, required, type, value }" @update="update" />
+    <BaseInput v-bind="{ id, hint, required, type, value }" v-on="{ update }" />
     <button
       v-test="{ id: 'togglePasswordVisibility' }"
       :class="
@@ -22,10 +22,8 @@
 
 <script>
 import { ref } from '@vue/composition-api'
-
 import InputWrap from './InputWrap'
 import BaseInput from './BaseInput'
-
 import Icon from '~/components/Icon'
 
 export default {

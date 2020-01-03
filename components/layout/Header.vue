@@ -23,7 +23,6 @@
 import Search from './Search'
 import FastActions from './FastActions'
 import UserArea from './UserArea'
-
 import Icon from '~/components/Icon'
 import { mutations } from '~/store/'
 

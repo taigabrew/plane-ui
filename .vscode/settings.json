@@ -3,6 +3,11 @@
     "ru",
     "en"
   ],
+  "spellright.ignoreFiles": [
+    "**/.gitignore",
+    "**/yarn.lock",
+    "**/.spellignore"
+  ],
   "spellright.documentTypes": [
     "markdown",
     "latex",

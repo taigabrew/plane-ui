@@ -1,6 +1,6 @@
-# dashboard-demo
+# Plane UI
 
-> dashboad demo
+> Vue flavored dashboard layouts and components
 
 ## Build Setup
 

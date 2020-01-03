@@ -24,21 +24,21 @@
       >
         <input
           :id="`radio${key}`"
-          type="radio"
           :value="key"
           :name="`radio${id}`"
           :checked="modelValue === key"
-          class="absolute opacity-0 c-radio__input"
           @change="$emit('change', key)"
+          type="radio"
+          class="absolute opacity-0 c-radio__input"
         />
         <label
           :for="`radio${key}`"
-          class="text-sm cursor-pointer flex items-center"
           :class="
             buttons
               ? 'text-white px-5 py-2 transition-bg transition-250 transition-out-sine hover:bg-blue-600 active:bg-blue-500 select-none font-light tracking-wide c-radio__btn-label'
               : 'text-gray-700'
           "
+          class="text-sm cursor-pointer flex items-center"
         >
           <Icon
             :name="modelValue === key ? 'circle-with-bullet' : 'circle'"

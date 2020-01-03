@@ -3,8 +3,8 @@
     <Header class="bg-white py-3 flex-shrink-0 shadow-shade relative z-10" />
     <div class="flex flex-grow overflow-hidden">
       <SideNav
-        class="py-6 lg:w-1/6 absolute lg:static lg:block bg-gray-800 top-0 bottom-0 mt-16 lg:mt-0 left-0 lg:bg-transparent z-50 flex-shrink-0"
         :class="isOpenedSideNav ? '' : 'hidden'"
+        class="py-6 lg:w-1/6 absolute lg:static lg:block bg-gray-800 top-0 bottom-0 mt-16 lg:mt-0 left-0 lg:bg-transparent z-50 flex-shrink-0"
       />
       <nuxt class="p-4 md:p-8 flex-grow overflow-y-auto" />
     </div>

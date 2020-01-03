@@ -1,13 +1,14 @@
 <template>
   <div class="inline-flex items-center">
+    <!-- eslint-disable-next-line vue/require-component-is -->
     <component
-      :is="actionName === 'chat' ? 'button' : 'nuxt-link'"
+      :is="actionName === 'chat' ? 'button' : 'NuxtLink'"
       v-for="(action, actionName, index) in actions"
       :key="actionName"
       :to="actionName !== 'chat' ? action.src : null"
       :aria-label="action.label"
-      class="relative"
       :class="{ 'mr-4': index < Object.keys(actions).length - 1 }"
+      class="relative"
     >
       <Icon
         :name="action.icon"

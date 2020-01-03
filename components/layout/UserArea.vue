@@ -1,6 +1,6 @@
 <template>
   <div class="flex-shrink-0 ml-8 relative">
-    <button class="block" @click="isOpened = !isOpened">
+    <button @click="isOpened = !isOpened" class="block">
       <img
         src="/userpic.jpg"
         alt="Ваше изображение пользователя"
@@ -8,38 +8,38 @@
       />
     </button>
     <span
-      class="absolute left-full top-full w-3 h-3 border border-white rounded-full online-status-indicator"
       :class="statuses[onlineStatus].className"
+      class="absolute left-full top-full w-3 h-3 border border-white rounded-full online-status-indicator"
     />
     <!-- <span class="bg-green-400 bg-red-500 bg-yellow-500">Классы для PurgeCSS</span> -->
     <CollapseTransition>
       <div
-        v-if="isOpened"
         ref="userActionsDropdown"
+        v-if="isOpened"
         class="absolute right-0 top-full bg-white rounded shadow-lg py-2 text-sm text-gray-700 flex-col flex transition user-area-dropdown"
       >
         <button
           v-for="(status, statusName) in statuses"
           :key="statusName"
-          class="flex items-center pl-5 pr-8 whitespace-no-wrap py-1 hover:bg-gray-200 transition"
           @click="
             onlineStatus = statusName
             isOpened = false
           "
+          class="flex items-center pl-5 pr-8 whitespace-no-wrap py-1 hover:bg-gray-200 transition"
         >
           <span
-            class="w-3 h-3 rounded-full mr-3 flex-shrink-0 -mt-1"
             :class="status.className"
+            class="w-3 h-3 rounded-full mr-3 flex-shrink-0 -mt-1"
           />{{ status.name }}
         </button>
         <div class="h-px bg-gray-200 my-2" />
         <nuxt-link
           v-for="(nav, navKey) in navs"
           :key="navKey"
-          class="pl-4 pr-8 py-1 hover:bg-gray-200 flex items-center user-nav-link text-gray-600 transition"
           :to="nav.url"
+          class="pl-4 pr-8 py-1 hover:bg-gray-200 flex items-center user-nav-link text-gray-600 transition"
         >
-          <Icon class="w-6 h-6 mr-2 flex-shrink-0" :name="nav.icon" />
+          <Icon :name="nav.icon" class="w-6 h-6 mr-2 flex-shrink-0" />
           {{ nav.name }}
         </nuxt-link>
       </div>

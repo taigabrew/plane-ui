@@ -6,6 +6,13 @@ module.exports = {
       fontFamily: {
         sans: ['IBM Plex Sans', ...fontFamily.sans]
       },
+      colors: {
+        blue: {
+          ...colors.blue,
+          '500': 'hsl(227, 96%, 49%)',
+          '600': 'hsl(237, 85%, 45%)'
+        }
+      },
       inset: {
         '1/2': '50%',
         full: '100%'
@@ -13,6 +20,13 @@ module.exports = {
       boxShadow: {
         shade: '0 3px 10px rgba(0,0,0,.03), 0 1px 3px rgba(0,0,0,.02)',
         focus: `0 0 0 3px ${colors.blue['300']}`
+      },
+      minHeight: {
+        '8': '2rem',
+        '10': '2.5rem',
+        '12': '3rem',
+        '16': '4rem',
+        '32': '8rem'
       },
       transitionProperty: {
         bg: 'background-color',

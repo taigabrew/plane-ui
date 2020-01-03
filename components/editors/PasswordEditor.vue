@@ -3,8 +3,6 @@
     <BaseInput v-bind="{ id, hint, required, type, value }" v-on="{ update }" />
     <button
       v-test="{ id: 'togglePasswordVisibility' }"
-      name="showPassword"
-      class="absolute py-2 px-3 bottom-0 right-0 transition-text transition-out-cubic transition-250"
       :class="
         value
           ? 'text-blue-500 hover:text-blue-600 active:text-blue-500'
@@ -12,8 +10,10 @@
       "
       :title="type === 'password' ? 'Показать пароль' : 'Скрыть пароль'"
       :aria-label="type === 'password' ? 'Показать пароль' : 'Скрыть пароль'"
-      type="button"
       @click="toggleVisiblePassword"
+      name="showPassword"
+      class="absolute py-2 px-3 bottom-0 right-0 transition-text transition-out-cubic transition-250"
+      type="button"
     >
       <Icon :name="type === 'password' ? 'eye' : 'eye-close'" class="w-6 h-6" />
     </button>
